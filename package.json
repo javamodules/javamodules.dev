@@ -25,8 +25,10 @@
     "test:all": "pnpm run /:test$/",
     "dev": "pnpm run build && pnpm run test && cd site && pnpm run dev",
     "start": "pnpm run site:start",
-    "build": "mv bun.lockb bun.inert && turbo build ; mv bun.inert bun.lockb",
-    "test": "mv bun.lockb bun.inert && turbo test ; mv bun.inert bun.lockb",
+    "build": "mv bun.lockb bun.inert && turbo build --no-daemon ; mv bun.inert bun.lockb",
+    "build:remote-cache": "cp -f .turbo/config.tpl.json .turbo/config.json && mv bun.lockb bun.inert && turbo build --token $BUILDLESS_APIKEY --no-daemon --cache-dir .turbo/cache --no-update-notifier ; mv bun.inert bun.lockb && rm -f ./.turbo/config.json",
+    "test": "mv bun.lockb bun.inert && turbo test --no-daemon ; mv bun.inert bun.lockb",
+    "test:remote-cache": "cp -f .turbo/config.tpl.json .turbo/config.json && mv bun.lockb bun.inert && turbo test --token $BUILDLESS_APIKEY --no-daemon --cache-dir .turbo/cache --no-update-notifier ; mv bun.inert bun.lockb && rm -f ./.turbo/config.json",
     "prepare": "husky"
   },
   "devDependencies": {

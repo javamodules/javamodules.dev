@@ -12,5 +12,30 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - name: "Setup: Harden Runner"
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          egress-policy: audit
       - name: "Setup: Checkout"
-        uses: actions/checkout@v4
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          persist-credentials: false
+      - name: "Setup: Node"
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        with:
+          node-version: ${{ vars.NODE_VERSION || '20' }}
+      - name: "Setup: Bun"
+        uses: oven-sh/setup-bun@d3603274aca5625baad52ec06108517a089cdd00 # v1.2.0
+        with:
+          bun-version: ${{ vars.BUN_VERSION || 'latest' }}
+      - name: "Setup: PNPM"
+        uses: pnpm/action-setup@v3
+        with:
+          version: ${{ vars.PNPM_VERSION || '8' }}
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
+      - name: "Setup: Buildless"
+        uses: buildless/setup@30e82389418c7f17046606183bc4c78b2c8913e0 # v1.0.2
+      - name: "Build: Libraries & Site"
+        run: pnpm run build
