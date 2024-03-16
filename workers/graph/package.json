@@ -1,0 +1,23 @@
+{
+	"name": "@javamodules/graph",
+	"version": "0.0.1",
+	"private": true,
+	"sideEffects": false,
+	"scripts": {
+		"build": "tsc -p .",
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev",
+		"start": "wrangler dev"
+	},
+	"dependencies": {
+		"@cloudflare/itty-router-openapi": "^1.0.1",
+		"@javamodules/common": "workspace:*"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20240314.0",
+		"@types/node": "^20.5.7",
+		"@types/service-worker-mock": "^2.0.4",
+		"typescript": "5.4.2",
+		"wrangler": "^3.0.0"
+	}
+}

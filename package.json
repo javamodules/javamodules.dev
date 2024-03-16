@@ -1,0 +1,23 @@
+{
+  "name": "@javamodules/attic",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "site",
+    "workers/common",
+    "workers/graph"
+  ],
+  "scripts": {
+    "fmt:check": "prettier . --check",
+    "fmt:write": "prettier . --write",
+    "libs:build": "pnpm --filter !@javamodules/site -r build",
+    "site:build": "cd site && pnpm run build",
+    "build:all": "pnpm run libs:build && pnpm run site:build",
+    "build:all-new": "pnpm run /:build$/",
+    "build": "turbo build"
+  },
+  "devDependencies": {
+    "prettier": "3.2.5",
+    "typescript": "5.4.2"
+  }
+}
