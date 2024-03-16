@@ -19,7 +19,7 @@
     "build:all": "pnpm run libs:build && pnpm run site:build",
     "test:all": "pnpm run /:test$/",
     "build": "turbo build",
-    "test": "turbo test",
+    "test": "pnpm run check && turbo test",
     "prepare": "husky"
   },
   "devDependencies": {

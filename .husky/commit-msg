@@ -1,1 +1,25 @@
+#!/bin/bash
+
+## install with frozen lockfile to verify lockfile validity
+pnpm i --frozen-lockfile
+
+## check signed-off-by and inject if not present
+NAME=$(git config user.name)
+EMAIL=$(git config user.email)
+
+if [ -z "$NAME" ]; then
+    echo "empty git config user.name"
+    exit 1
+fi
+
+if [ -z "$EMAIL" ]; then
+    echo "empty git config user.email"
+    exit 1
+fi
+
+git interpret-trailers --if-exists doNothing --trailer \
+    "Signed-off-by: $NAME <$EMAIL>" \
+    --in-place "$1"
+
+## run commitlint
 pnpm exec -- commitlint --edit $1
