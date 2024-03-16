@@ -24,3 +24,10 @@ jobs:
   check-workflows:
     name: "Check: Workflows"
     uses: ./.github/workflows/check.workflows.yml
+
+  deploy:
+    name: "Deploy"
+    if: false
+    needs: [build, test, check-prettier, check-workflows]
+    uses: ./.github/workflows/ci.deploy.yml
+  

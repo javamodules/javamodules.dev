@@ -2,6 +2,8 @@
 build
 dist
 coverage
+reports
+.turbo
 
 # Logs
 

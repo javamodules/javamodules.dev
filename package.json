@@ -11,7 +11,7 @@
   "scripts": {
     "check": "pnpm run /:check$/",
     "clean": "rm -fr dist && rm -fr site/dist && rm -fr workers/*/build workers/*/dist",
-    "dist": "mkdir -p dist && pnpm run libs:build && pnpm run site:build:prod && cp -frv site/dist/* dist/",
+    "dist": "mkdir -p dist && pnpm run site:build:prod && cp -frv site/dist/* dist/",
     "fmt:check": "prettier . --check",
     "fmt:write": "prettier . --write",
     "libs:build": "pnpm --filter !@javamodules/site -r build",

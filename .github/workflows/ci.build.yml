@@ -11,6 +11,8 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: "Setup: Harden Runner"
         uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
@@ -29,7 +31,7 @@ jobs:
         with:
           bun-version: ${{ vars.BUN_VERSION || 'latest' }}
       - name: "Setup: PNPM"
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d # v3.0.0
         with:
           version: ${{ vars.PNPM_VERSION || '8' }}
           run_install: |
@@ -37,5 +39,19 @@ jobs:
               args: [--frozen-lockfile, --strict-peer-dependencies]
       - name: "Setup: Buildless"
         uses: buildless/setup@30e82389418c7f17046606183bc4c78b2c8913e0 # v1.0.2
-      - name: "Build: Libraries & Site"
-        run: pnpm run build
+      - name: "Build: Libraries"
+        run: pnpm run libs:build
+      - name: "Build: Distribution"
+        run: pnpm run dist
+      - name: "Artifact: Workers & Site"
+        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
+        with:
+          name: javamodules-web-${{ github.sha }}
+          retention-days: 7
+          compression-level: 4
+          overwrite: true
+          path: |
+            dist/*.*
+            dist/**/*.*
+            workers/*/build/*.*
+            workers/*/build/**/*.*
