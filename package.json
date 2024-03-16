@@ -8,6 +8,7 @@
     "workers/graph"
   ],
   "scripts": {
+    "check": "pnpm run /:check$/",
     "fmt:check": "prettier . --check",
     "fmt:write": "prettier . --write",
     "libs:build": "pnpm --filter !@javamodules/site -r build",
