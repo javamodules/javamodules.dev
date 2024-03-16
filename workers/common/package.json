@@ -4,7 +4,9 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "test": "echo No tests yet",
+    "deploy": "echo Deploy skipped for common"
   },
   "dependencies": {
     "@cloudflare/itty-router-openapi": "^1.0.1",
