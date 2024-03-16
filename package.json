@@ -16,8 +16,11 @@
     "libs:test": "pnpm --filter !@javamodules/site -r test",
     "site:build": "cd site && pnpm run build",
     "site:test": "cd site && pnpm run test",
+    "site:start": "cd site && pnpm run start",
     "build:all": "pnpm run libs:build && pnpm run site:build",
     "test:all": "pnpm run /:test$/",
+    "dev": "pnpm run build && pnpm run test && cd site && pnpm run dev",
+    "start": "pnpm run site:start",
     "build": "turbo build",
     "test": "pnpm run check && turbo test",
     "prepare": "husky"
