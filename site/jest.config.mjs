@@ -5,9 +5,12 @@ export default {
   transform: {},
   reporters: [
     "default",
-    ["jest-junit", {
-      suiteName: 'Site Frontend',
-      outputDirectory: 'reports',
-    }]
+    [
+      "jest-junit",
+      {
+        suiteName: "Site Frontend",
+        outputDirectory: "reports",
+      },
+    ],
   ],
 };

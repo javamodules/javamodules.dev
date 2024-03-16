@@ -30,4 +30,3 @@ jobs:
     if: false
     needs: [build, test, check-prettier, check-workflows]
     uses: ./.github/workflows/ci.deploy.yml
-  
