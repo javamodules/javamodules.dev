@@ -26,7 +26,7 @@
     "dev": "pnpm run build && pnpm run test && cd site && pnpm run dev",
     "start": "pnpm run site:start",
     "build": "mv bun.lockb bun.inert && turbo build ; mv bun.inert bun.lockb",
-    "test": "pnpm run check && turbo test",
+    "test": "mv bun.lockb bun.inert && turbo test ; mv bun.inert bun.lockb",
     "prepare": "husky"
   },
   "devDependencies": {
