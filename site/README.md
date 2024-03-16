@@ -50,4 +50,5 @@ npm run deploy
 ```
 
 [bindings]: https://developers.cloudflare.com/pages/functions/bindings/
->>>>>>> 0d1e7f6 (Initial commit from create-remix)
+
+> > > > > > > 0d1e7f6 (Initial commit from create-remix)

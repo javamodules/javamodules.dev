@@ -1,16 +1,8 @@
-import {
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "@remix-run/react";
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
 
 import shared from "~/styles/shared.css?url";
 
-export const links = () => [
-  { rel: "stylesheet", href: shared },
-];
+export const links = () => [{ rel: "stylesheet", href: shared }];
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (

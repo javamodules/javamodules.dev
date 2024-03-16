@@ -1,14 +1,9 @@
-
 /** Single vulnerability detection. */
-export type Vulnerability = {
-
-};
+export type Vulnerability = {};
 
 /**
  * Vulnerability Info
  *
  * Gathered vulnerability info for a given dependency
  */
-export interface VulnerabilityInfo {
-
-}
+export interface VulnerabilityInfo {}

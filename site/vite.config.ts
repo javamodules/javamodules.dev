@@ -1,10 +1,7 @@
-import {
-  vitePlugin as remix,
-  cloudflareDevProxyVitePlugin as remixCloudflareDevProxy,
-} from "@remix-run/dev";
+import { vitePlugin as remix, cloudflareDevProxyVitePlugin as remixCloudflareDevProxy } from "@remix-run/dev";
 
 import { defineConfig } from "vite";
-import react from '@vitejs/plugin-react'
+import react from "@vitejs/plugin-react";
 import tsconfigPaths from "vite-tsconfig-paths";
 import mdx from "@mdx-js/rollup";
 import { visualizer } from "rollup-plugin-visualizer";
@@ -14,32 +11,33 @@ const isStorybook = process.argv[1]?.includes("storybook");
 export default defineConfig({
   build: {
     manifest: true,
-    target: 'es2022',
+    target: "es2022",
     modulePreload: {
-      polyfill: true
-    }
+      polyfill: true,
+    },
   },
   css: {
     modules: {
-      exportGlobals: true
+      exportGlobals: true,
     },
   },
   esbuild: {},
   ssr: {
-    target: 'webworker'
+    target: "webworker",
   },
   plugins: [
     {
-      enforce: 'pre',
-      ...mdx(/* jsxImportSource: …, otherOptions… */)
+      enforce: "pre",
+      ...mdx(/* jsxImportSource: …, otherOptions… */),
     },
     react(),
     remixCloudflareDevProxy(),
-    !isStorybook && remix({
-      basename: "/",
-      manifest: true,
-      buildDirectory: "build",
-    }),
+    !isStorybook &&
+      remix({
+        basename: "/",
+        manifest: true,
+        buildDirectory: "build",
+      }),
     tsconfigPaths(),
     visualizer({ emitFile: true }),
   ],
