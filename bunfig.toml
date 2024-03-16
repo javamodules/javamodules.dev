@@ -1,0 +1,16 @@
+[install]
+exact = false
+registry = "https://npm.pkg.st"
+
+[install.cache]
+dir = "./.dev/store/bun"
+disable = false
+
+[install.lockfile]
+save = true
+
+[install.scopes]
+buf = "https://buf.build/gen/npm/v1/"
+
+[run]
+bun = true

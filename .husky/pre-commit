@@ -1,1 +1,18 @@
-# Nothing at this time.
+#!/bin/bash
+
+## install with frozen lockfile to verify lockfile validity
+pnpm install \
+    --strict-peer-dependencies \
+    --no-verify-store-integrity \
+    --frozen-lockfile \
+    --offline \
+    --ignore-scripts
+
+## make sure bun lockfile is up-to-date
+bun install \
+    --frozen-lockfile \
+    --ignore-scripts \
+    --dry-run
+
+## run commitlint
+pnpm exec -- commitlint --edit $1
