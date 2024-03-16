@@ -1,3 +1,31 @@
-name = "graph"
+name = "javamodules-graph"
 main = "src/index.ts"
 compatibility_date = "2024-03-14"
+workers_dev = false
+keep_vars = true
+
+[[ d1_databases ]]
+binding = "DATABASE"
+database_name = "pkgst"
+database_id = "1ada21db-4b86-49af-913a-930c3bf9bcb7"
+preview_database_id = "af5735cc-355e-4ead-816d-db08fd2fb396"
+
+[[r2_buckets]]
+binding = "REPOSITORY"
+bucket_name = "javamodules"
+
+[[services]]
+binding = "REPO"
+service = "javamodules"
+
+[[queues.producers]]
+binding = "EVENTS"
+queue = "javamodules-events"
+
+[[kv_namespaces]]
+binding = "MODULEINFO"
+id = "557c2f8dbf2a43e49bd0d75733aa431d"
+
+[[analytics_engine_datasets]]
+binding = "ANALYTICS"
+dataset = "javamodules-sandbox"
