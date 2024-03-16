@@ -39,6 +39,6 @@
     }
   },
   "lint-staged": {
-    "*": "prettier --write"
+    "*": "pnpm run check"
   }
 }
