@@ -32,8 +32,9 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.2.0",
-    "@commitlint/config-conventional": "^19.1.0",
+    "@commitlint/cli": "19.1.0",
+    "@commitlint/config-conventional": "19.1.0",
+    "commitlint": "19.1.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "prettier": "3.2.5",
@@ -46,5 +47,11 @@
   },
   "lint-staged": {
     "*": "pnpm run check"
+  },
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"],
+    "rules": {
+      "signed-off-by": [2, "always"]
+    }
   }
 }

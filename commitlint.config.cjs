@@ -1,7 +1,7 @@
 /**
  * @type {import('@commitlint/types').UserConfig}
  */
-export default {
+module.exports = {
   extends: ["@commitlint/config-conventional"],
   rules: {
     "signed-off-by": [2, "always"],

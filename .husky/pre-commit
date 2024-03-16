@@ -12,7 +12,5 @@ pnpm install \
 bun install \
     --frozen-lockfile \
     --ignore-scripts \
+    --silent \
     --dry-run
-
-## run commitlint
-pnpm exec -- commitlint --edit $1

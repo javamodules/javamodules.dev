@@ -9,11 +9,14 @@ importers:
   .:
     devDependencies:
       '@commitlint/cli':
-        specifier: ^19.2.0
-        version: 19.2.0(@types/node@20.11.28)(typescript@5.4.2)
+        specifier: 19.1.0
+        version: 19.1.0(@types/node@20.11.28)(typescript@5.4.2)
       '@commitlint/config-conventional':
-        specifier: ^19.1.0
+        specifier: 19.1.0
         version: 19.1.0
+      commitlint:
+        specifier: 19.1.0
+        version: 19.1.0(@types/node@20.11.28)(typescript@5.4.2)
       husky:
         specifier: ^9.0.11
         version: 9.0.11
@@ -801,8 +804,8 @@ packages:
   /@cloudflare/workers-types@4.20240314.0:
     resolution: {integrity: sha512-eg2dK/tYSiFvQu3sexjB32WEGi3GEmY6pLRF4nrV9Rwi2F2965o6f6604jQY8whhrmNdEoWErSjhuuUld6xgKQ==, tarball: https://registry.npmjs.org/@cloudflare/workers-types/-/workers-types-4.20240314.0.tgz}
 
-  /@commitlint/cli@19.2.0(@types/node@20.11.28)(typescript@5.4.2):
-    resolution: {integrity: sha512-8XnQDMyQR+1/ldbmIyhonvnDS2enEw48Wompo/967fsEvy9Vj5/JbDutzmSBKxANWDVeEbR9QQm0yHpw6ArrFw==, tarball: https://registry.npmjs.org/@commitlint/cli/-/cli-19.2.0.tgz}
+  /@commitlint/cli@19.1.0(@types/node@20.11.28)(typescript@5.4.2):
+    resolution: {integrity: sha512-SYGm8HGbVzrlSYeB6oo6pG1Ec6bOMJcDsXgNGa4vgZQsPj6nJkcbTWlIRmtmIk0tHi0d5sCljGuQ+g/0NCPv7w==, tarball: https://registry.npmjs.org/@commitlint/cli/-/cli-19.1.0.tgz}
     engines: {node: '>=v18'}
     hasBin: true
     dependencies:
@@ -3961,6 +3964,18 @@ packages:
   /commander@9.5.0:
     resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==, tarball: https://registry.npmjs.org/commander/-/commander-9.5.0.tgz}
     engines: {node: ^12.20.0 || >=14}
+    dev: true
+
+  /commitlint@19.1.0(@types/node@20.11.28)(typescript@5.4.2):
+    resolution: {integrity: sha512-dy8P0q6CQmnnFSfh4pnPfy9h1HfofV5lsOd7b2xibEn/mbzx2bTN9owyFBzNZN4RhBUymYQHTLNcg/sOabfU/A==, tarball: https://registry.npmjs.org/commitlint/-/commitlint-19.1.0.tgz}
+    engines: {node: '>=v18'}
+    hasBin: true
+    dependencies:
+      '@commitlint/cli': 19.1.0(@types/node@20.11.28)(typescript@5.4.2)
+      '@commitlint/types': 19.0.3
+    transitivePeerDependencies:
+      - '@types/node'
+      - typescript
     dev: true
 
   /compare-func@2.0.0:

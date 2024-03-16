@@ -17,3 +17,6 @@ fi
 git interpret-trailers --if-exists doNothing --trailer \
     "Signed-off-by: $NAME <$EMAIL>" \
     --in-place "$1"
+
+## run commitlint
+pnpm exec -- commitlint --edit $1
