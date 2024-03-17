@@ -25,6 +25,8 @@
     "chromatic": "pnpm dlx chromatic@latest --project-token=$CHROMATIC_TOKEN --exit-zero-on-changes --exit-once-uploaded"
   },
   "dependencies": {
+    "@headlessui/react": "1.7.18",
+    "@heroicons/react": "2.1.1",
     "@mdx-js/react": "3.0.1",
     "@radix-ui/react-slot": "1.0.2",
     "@remix-run/cloudflare": "2.8.1",

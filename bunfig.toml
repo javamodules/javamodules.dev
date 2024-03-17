@@ -1,5 +1,5 @@
 [install]
-exact = false
+exact = true
 registry = "https://npm.pkg.st"
 
 [install.cache]

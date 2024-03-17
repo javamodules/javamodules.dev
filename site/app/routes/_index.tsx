@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
+    { title: "Java Modules" },
     {
       name: "description",
-      content: "Welcome to Remix! Using Vite and Cloudflare!",
+      content: "Hello Java Modules!",
     },
   ];
 };

@@ -4,3 +4,4 @@ dist/
 .turbo
 .codebase
 .dev
+.DS_Store
