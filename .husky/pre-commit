@@ -14,3 +14,6 @@ bun install \
     --ignore-scripts \
     --silent \
     --dry-run
+
+## lint staged files
+pnpm exec lint-staged
