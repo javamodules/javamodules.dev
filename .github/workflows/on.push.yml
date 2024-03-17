@@ -13,7 +13,20 @@ jobs:
     name: "Build"
     uses: ./.github/workflows/ci.build.yml
 
+  test:
+    name: "Build"
+    uses: ./.github/workflows/ci.test.yml
+
+  check-prettier:
+    name: "Check: Prettier"
+    uses: ./.github/workflows/check.prettier.yml
+
+  check-workflows:
+    name: "Check: Workflows"
+    uses: ./.github/workflows/check.workflows.yml
+
   deploy:
     name: "Deploy"
     uses: ./.github/workflows/ci.deploy.yml
+    needs: [build, test]
     secrets: inherit

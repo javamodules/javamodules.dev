@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   build:
-    name: Build
+    name: "Build: Site"
     runs-on: ubuntu-latest
     permissions:
       contents: read
