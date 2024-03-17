@@ -40,11 +40,11 @@ export default defineConfig({
         buildDirectory: "build",
       }),
     tsconfigPaths(),
-    visualizer({ emitFile: true }),
     codecovVitePlugin({
       enableBundleAnalysis: process.env.CODECOV_TOKEN !== undefined,
       bundleName: "site",
       uploadToken: process.env.CODECOV_TOKEN,
     }),
+    visualizer({ emitFile: true }),
   ],
 });
