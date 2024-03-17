@@ -11,9 +11,14 @@ on:
         description: "Cloudflare API Token"
 
       ## Cloudflare: Account ID
-      CLOUDFLARE_ACCOUNT:
+      CLOUDFLARE_ACCOUNT_ID:
         required: true
         description: "Cloudflare Account"
+
+      ## Cloudflare: Account ID
+      CLOUDFLARE_ZONE_ID:
+        required: false
+        description: "Cloudflare Zone"
 
 permissions:
   contents: read
@@ -110,6 +115,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
 
   ## Deploy: Web application.
   deploy-app:
