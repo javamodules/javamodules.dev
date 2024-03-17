@@ -5,4 +5,5 @@ dist
 node_modules
 gen
 pnpm-lock.yaml
+pnpm-lock*
 bun.lockb

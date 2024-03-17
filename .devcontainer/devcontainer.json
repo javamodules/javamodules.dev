@@ -1,0 +1,90 @@
+{
+  "name": "Java Modules: Dev",
+  "remoteUser": "dev",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "..",
+    "cacheFrom": "ghcr.io/javamodules/javamodules.dev:latest",
+    "args": {
+      "NODE_VERSION": "21.7.1",
+      "BUN_VERSION": "1.0.31"
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers-contrib/features/actionlint:1": {},
+    "ghcr.io/devcontainers-contrib/features/cosign:1": {},
+    "ghcr.io/devcontainers-contrib/features/fulcio:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.gpuAcceleration": "on",
+        "terminal.integrated.enableImages": true,
+        "terminal.integrated.customGlyphs": true,
+        "workbench.editorAssociations": {
+          "*.md": "vscode.markdown.preview.editor"
+        }
+      },
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "dotjoshjohnson.xml",
+        "esbenp.prettier-vscode",
+        "github.codespaces",
+        "github.copilot",
+        "github.remotehub",
+        "github.vscode-codeql",
+        "github.vscode-pull-request-github",
+        "gruntfuggly.todo-tree",
+        "ms-vscode-remote.remote-containers",
+        "ms-vscode.live-server",
+        "oven.bun-vscode",
+        "redhat.vscode-yaml",
+        "snyk-security.snyk-vulnerability-scanner",
+        "socketsecurity.vscode-socket-security",
+        "sourcegraph.cody-ai",
+        "sourcegraph.sourcegraph"
+      ]
+    },
+    "codespaces": {
+      "repositories": {
+        "javamodules/javamodules.dev": {
+          "permissions": {
+            "contents": "read",
+            "issues": "read",
+            "pull_requests": "read"
+          }
+        }
+      }
+    }
+  },
+  "secrets": {
+    "BUILDLESS_APIKEY": {
+      "description": "API key for build caching via Buildless.",
+      "documentationUrl": "https://docs.less.build/reference/intro/getting-started"
+    },
+    "CLOUDFLARE_API_TOKEN": {
+      "description": "API token for interacting with Cloudflare.",
+      "documentationUrl": "https://developers.cloudflare.com/fundamentals/api/get-started/create-token"
+    },
+    "CLOUDFLARE_ACCOUNT_ID": {
+      "description": "Account ID for interacting with Cloudflare.",
+      "documentationUrl": "https://developers.cloudflare.com/fundamentals/setup/find-account-and-zone-ids"
+    }
+  },
+  "forwardPorts": [
+    5173,
+    8888
+  ],
+  "portsAttributes": {
+    "5173": {
+      "label": "Vite Dev",
+      "onAutoForward": "notify"
+    },
+    "8888": {
+      "label": "Workers Dev",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "pnpm install --frozen-lockfile --strict-peer-dependencies"
+}
