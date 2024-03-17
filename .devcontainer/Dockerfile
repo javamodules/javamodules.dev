@@ -4,6 +4,12 @@ FROM --platform=linux/amd64 mcr.microsoft.com/vscode/devcontainers/base@sha256:f
 ARG BUN_VERSION=1.0.31
 ARG NODE_VERSION=21.7.1
 
+LABEL org.opencontainers.image.base.name = "mcr.microsoft.com/vscode/devcontainers/base:bullseye"
+LABEL org.opencontainers.image.source = "https://github.com/javamodules/javamodules.dev"
+LABEL org.opencontainers.image.licenses = "Apache-2.0"
+LABEL org.opencontainers.image.title = "Java Modules Site Dev Container"
+LABEL org.opencontainers.image.version = "1.0.0"
+
 ## Step 1: Basic Utilities
 RUN apt-get update \
 	&& DEBIAN_FRONTEND=noninteractive apt-get upgrade -y \
