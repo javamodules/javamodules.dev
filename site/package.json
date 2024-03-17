@@ -8,7 +8,7 @@
     "build": "remix vite:build",
     "build:prod": "NODE_ENV=production remix vite:build --mode=production",
     "clean": "rm -fr dist build",
-    "dist": "pushd .. && pnpm run libs:build && popd && pnpm run build:prod && mkdir -p dist/assets && cp -frv build/client/* dist/ && cp -frv build/server/* dist/ && cp -frv public/* dist/ && cp -frv build dist/",
+    "dist": "cd .. && pnpm run libs:build && cd site && pnpm run build:prod && mkdir -p dist/assets && cp -frv build/client/* dist/ && cp -frv build/server/* dist/ && cp -frv public/* dist/ && cp -frv build dist/",
     "deploy": "bun run build:prod && pnpm dlx wrangler@latest pages deploy ./build/client",
     "dev": "remix vite:dev",
     "test": "jest --collect-coverage",
