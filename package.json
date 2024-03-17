@@ -15,6 +15,7 @@
     "devcontainer:build": "docker buildx build --attest=type=provenance --attest=type=sbom --push -t ghcr.io/javamodules/javamodules.dev/devcontainer -f .devcontainer/Dockerfile .",
     "devcontainer:push": "docker push ghcr.io/javamodules/javamodules.dev/devcontainer",
     "devcontainer": "docker run --rm -it ghcr.io/javamodules/javamodules.dev/devcontainer",
+    "format": "pnpm run fmt:write",
     "fmt:check": "prettier . --check",
     "fmt:write": "prettier . --write",
     "libs:build": "pnpm --filter !@javamodules/site -r build",
@@ -32,7 +33,10 @@
     "build:remote-cache": "cp -f .turbo/config.tpl.json .turbo/config.json && mv bun.lockb bun.inert && turbo build --token $BUILDLESS_APIKEY --no-daemon --cache-dir .dev/cache/turbo --no-update-notifier ; mv bun.inert bun.lockb && rm -f ./.turbo/config.json",
     "test": "mv bun.lockb bun.inert && turbo test --no-daemon --cache-dir .dev/cache/turbo --no-update-notifier ; mv bun.inert bun.lockb",
     "test:remote-cache": "cp -f .turbo/config.tpl.json .turbo/config.json && mv bun.lockb bun.inert && turbo test --token $BUILDLESS_APIKEY --no-daemon --cache-dir .dev/cache/turbo --no-update-notifier ; mv bun.inert bun.lockb && rm -f ./.turbo/config.json",
-    "prepare": "husky"
+    "storybook": "pnpm run build && cd site && pnpm run storybook",
+    "chromatic": "pnpm run build && cd site && pnpm run chromatic",
+    "prepare": "husky",
+    "turbo": "turbo"
   },
   "devDependencies": {
     "@changesets/cli": "2.27.1",
@@ -42,6 +46,7 @@
     "husky": "9.0.11",
     "lint-staged": "15.2.2",
     "prettier": "3.2.5",
+    "turbo": "1.12.5",
     "typescript": "5.4.2"
   },
   "husky": {

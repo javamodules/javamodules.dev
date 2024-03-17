@@ -16,14 +16,20 @@ jobs:
   test:
     name: "Build"
     uses: ./.github/workflows/ci.test.yml
+    secrets: inherit # codecov/sonar tokens
 
   check-prettier:
-    name: "Check: Prettier"
+    name: "Checks"
     uses: ./.github/workflows/check.prettier.yml
 
   check-workflows:
-    name: "Check: Workflows"
+    name: "Checks"
     uses: ./.github/workflows/check.workflows.yml
+
+  check-chromatic:
+    name: "Checks"
+    uses: ./.github/workflows/check.chromatic.yml
+    secrets: inherit
 
   deploy:
     name: "Deploy"
