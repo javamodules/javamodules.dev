@@ -16,5 +16,4 @@ jobs:
   deploy:
     name: "Deploy"
     uses: ./.github/workflows/ci.deploy.yml
-    with:
-      secrets: inherit
+    secrets: inherit

@@ -72,10 +72,7 @@
       "documentationUrl": "https://developers.cloudflare.com/fundamentals/setup/find-account-and-zone-ids"
     }
   },
-  "forwardPorts": [
-    5173,
-    8888
-  ],
+  "forwardPorts": [5173, 8888],
   "portsAttributes": {
     "5173": {
       "label": "Vite Dev",
