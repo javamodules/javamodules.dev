@@ -82,6 +82,8 @@ jobs:
     needs: [build-dist]
     permissions:
       contents: read
+    environment:
+      name: workers
     steps:
       - name: "Setup: Harden Runner"
         uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
@@ -109,7 +111,7 @@ jobs:
       - name: "Artifacts: Deployment Distributions"
         uses: actions/download-artifact@c850b930e6ba138125429b7e5c93fc707a7f8427 # v4.1.4
         with:
-          name: ${{ needs.build-dist.outputs.artifact-id }}
+          name: javamodules-dist-${{ github.sha }}
       - name: "Deploy: Graph Worker"
         run: pnpm run --filter="@javamodules/graph" deploy
         env:
@@ -124,6 +126,9 @@ jobs:
     needs: [build-dist, deploy-workers]
     permissions:
       contents: read
+    environment:
+      name: site
+      url: https://javamodules.dev
     steps:
       - name: "Setup: Harden Runner"
         uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
@@ -151,6 +156,6 @@ jobs:
       - name: "Artifacts: Deployment Distributions"
         uses: actions/download-artifact@c850b930e6ba138125429b7e5c93fc707a7f8427 # v4.1.4
         with:
-          name: ${{ needs.build-dist.outputs.artifact-id }}
+          name: javamodules-dist-${{ github.sha }}
       - name: "Stubbed"
         run: "echo Site deploy is stubbed from Workers"
