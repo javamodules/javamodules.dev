@@ -25,6 +25,7 @@ jobs:
   build:
     name: "Build"
     uses: ./.github/workflows/ci.build.yml
+    secrets: inherit # codecov bundle analysis
 
   test:
     name: "Build"
