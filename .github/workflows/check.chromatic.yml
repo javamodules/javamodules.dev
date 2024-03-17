@@ -1,15 +1,19 @@
-name: "Check: Prettier"
+name: "Check: Chromatic"
 
 on:
-  workflow_call: {}
   workflow_dispatch: {}
+  workflow_call:
+    secrets:
+      CHROMATIC_TOKEN:
+        description: "Chromatic Token"
+        required: true
 
 permissions:
   contents: read
 
 jobs:
-  check-prettier:
-    name: "Lint: Prettier"
+  check-chromatic:
+    name: "Storybook"
     runs-on: ubuntu-latest
     steps:
       - name: "Setup: Harden Runner"
@@ -20,6 +24,7 @@ jobs:
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           persist-credentials: false
+          fetch-depth: 0
       - name: "Setup: Node"
         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
@@ -35,3 +40,11 @@ jobs:
           run_install: |
             - recursive: true
               args: [--frozen-lockfile, --strict-peer-dependencies]
+      - name: "Setup: Doppler"
+        uses: dopplerhq/cli-action@014df23b1329b615816a38eb5f473bb9000700b1 # v3
+      - name: "Build: Libraries"
+        run: pnpm run libs:build
+      - name: "Build: Storybook"
+        run: pnpm run chromatic
+        env:
+          CHROMATIC_TOKEN: ${{ secrets.CHROMATIC_TOKEN }}
