@@ -15,7 +15,7 @@
   "devDependencies": {
     "@cloudflare/workers-types": "4.20240314.0",
     "@jest/globals": "29.7.0",
-    "@types/node": "20.11.28",
+    "@types/node": "20.11.29",
     "@types/service-worker-mock": "2.0.4",
     "drizzle-kit": "0.20.14",
     "jest": "29.7.0",
