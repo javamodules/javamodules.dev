@@ -11,7 +11,7 @@
     "test": "jest --collect-coverage"
   },
   "dependencies": {
-    "@cloudflare/itty-router-openapi": "1.0.14",
+    "@cloudflare/itty-router-openapi": "1.1.0",
     "@javamodules/common": "workspace:*"
   },
   "devDependencies": {
