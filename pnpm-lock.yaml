@@ -217,8 +217,8 @@ importers:
   workers/common:
     dependencies:
       '@cloudflare/itty-router-openapi':
-        specifier: 1.0.14
-        version: 1.0.14
+        specifier: 1.1.0
+        version: 1.1.0
       drizzle-orm:
         specifier: 0.30.2
         version: 0.30.2(@cloudflare/workers-types@4.20240314.0)
@@ -254,8 +254,8 @@ importers:
   workers/graph:
     dependencies:
       '@cloudflare/itty-router-openapi':
-        specifier: 1.0.14
-        version: 1.0.14
+        specifier: 1.1.0
+        version: 1.1.0
       '@javamodules/common':
         specifier: workspace:*
         version: link:../common
@@ -1842,8 +1842,8 @@ packages:
       - react
     dev: true
 
-  /@cloudflare/itty-router-openapi@1.0.14:
-    resolution: {integrity: sha512-OqRNm1bjP1PFGvUu1/fVJp8mYaDLHVVVDajkCKyV+pAlZMoztTPitbbMPRrUoMNqfs3MQM/0x8E69702qiI1Eg==, tarball: https://registry.npmjs.org/@cloudflare/itty-router-openapi/-/itty-router-openapi-1.0.14.tgz}
+  /@cloudflare/itty-router-openapi@1.1.0:
+    resolution: {integrity: sha512-/IzpWbHN02zupUfoQZ8gSXUkX4n0+xQFEPlMPKXGd2K78+rDL/DpJbUYza0QtQIAQuT0sbyqrAJo51VtDu3nlw==, tarball: https://registry.npmjs.org/@cloudflare/itty-router-openapi/-/itty-router-openapi-1.1.0.tgz}
     dependencies:
       '@asteasolutions/zod-to-openapi': 5.5.0(zod@3.22.4)
       itty-router: 4.0.26
