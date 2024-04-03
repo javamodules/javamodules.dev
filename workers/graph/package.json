@@ -15,7 +15,7 @@
     "@javamodules/common": "workspace:*"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20240314.0",
+    "@cloudflare/workers-types": "4.20240402.0",
     "@jest/globals": "29.7.0",
     "@types/node": "20.11.28",
     "@types/service-worker-mock": "2.0.4",
