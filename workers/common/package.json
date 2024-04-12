@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@cloudflare/itty-router-openapi": "1.0.14",
-    "drizzle-orm": "0.30.2"
+    "drizzle-orm": "0.30.8"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20240314.0",
