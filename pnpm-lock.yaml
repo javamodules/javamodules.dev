@@ -217,8 +217,8 @@ importers:
   workers/common:
     dependencies:
       '@cloudflare/itty-router-openapi':
-        specifier: 1.0.14
-        version: 1.0.14
+        specifier: 1.1.1
+        version: 1.1.1
       drizzle-orm:
         specifier: 0.30.2
         version: 0.30.2(@cloudflare/workers-types@4.20240314.0)
@@ -254,8 +254,8 @@ importers:
   workers/graph:
     dependencies:
       '@cloudflare/itty-router-openapi':
-        specifier: 1.0.14
-        version: 1.0.14
+        specifier: 1.1.1
+        version: 1.1.1
       '@javamodules/common':
         specifier: workspace:*
         version: link:../common
@@ -308,8 +308,8 @@ packages:
       '@jridgewell/trace-mapping': 0.3.25
     dev: true
 
-  /@asteasolutions/zod-to-openapi@5.5.0(zod@3.22.4):
-    resolution: {integrity: sha512-d5HwrvM6dOKr3XdeF+DmashGvfEc+1oiEfbscugsiwSTrFtuMa7ETpW9sTNnVgn+hJaz+PRxPQUYD7q9/5dUig==, tarball: https://registry.npmjs.org/@asteasolutions/zod-to-openapi/-/zod-to-openapi-5.5.0.tgz}
+  /@asteasolutions/zod-to-openapi@6.4.0(zod@3.22.4):
+    resolution: {integrity: sha512-8cxfF7AHHx2PqnN4Cd8/O8CBu/nVYJP9DpnfVLW3BFb66VJDnqI/CczZnkqMc3SNh6J9GiX7JbJ5T4BSP4HZ2Q==, tarball: https://registry.npmjs.org/@asteasolutions/zod-to-openapi/-/zod-to-openapi-6.4.0.tgz}
     peerDependencies:
       zod: ^3.20.2
     dependencies:
@@ -1842,10 +1842,10 @@ packages:
       - react
     dev: true
 
-  /@cloudflare/itty-router-openapi@1.0.14:
-    resolution: {integrity: sha512-OqRNm1bjP1PFGvUu1/fVJp8mYaDLHVVVDajkCKyV+pAlZMoztTPitbbMPRrUoMNqfs3MQM/0x8E69702qiI1Eg==, tarball: https://registry.npmjs.org/@cloudflare/itty-router-openapi/-/itty-router-openapi-1.0.14.tgz}
+  /@cloudflare/itty-router-openapi@1.1.1:
+    resolution: {integrity: sha512-iJKV7vIaJctMykyiNC89W+ZR3cQ5q8tQL1rVejtkXSj+/AuJYX0l7NrrM3D3u+SijbvsNsNMjFsoCGIzG7tpmQ==, tarball: https://registry.npmjs.org/@cloudflare/itty-router-openapi/-/itty-router-openapi-1.1.1.tgz}
     dependencies:
-      '@asteasolutions/zod-to-openapi': 5.5.0(zod@3.22.4)
+      '@asteasolutions/zod-to-openapi': 6.4.0(zod@3.22.4)
       itty-router: 4.0.26
       js-yaml: 4.1.0
       openapi3-ts: 4.2.2
