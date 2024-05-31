@@ -1,5 +1,5 @@
 # debian bullseye
-FROM --platform=linux/amd64 mcr.microsoft.com/vscode/devcontainers/base@sha256:33ff3550308c99ea0e0d63b61a03e8590588aee7c15c83077cb3cebed49a8861
+FROM --platform=linux/amd64 mcr.microsoft.com/vscode/devcontainers/base@sha256:eb54c7935538ce8a63092a53d61c95f8cebc19921de2df6bc65dc606d8e5bb1d
 
 ARG BUN_VERSION=1.0.31
 ARG NODE_VERSION=21.7.1
