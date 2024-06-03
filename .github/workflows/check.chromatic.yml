@@ -43,7 +43,7 @@ jobs:
         with:
           node-version: ${{ vars.NODE_VERSION || '21' }}
       - name: "Setup: Bun"
-        uses: oven-sh/setup-bun@d3603274aca5625baad52ec06108517a089cdd00 # v1.2.0
+        uses: oven-sh/setup-bun@f4d14e03ff726c06358e5557344e1da148b56cf7 # v1.2.2
         with:
           bun-version: ${{ vars.BUN_VERSION || 'latest' }}
       - name: "Setup: PNPM"
