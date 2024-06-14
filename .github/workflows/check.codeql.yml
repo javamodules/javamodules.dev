@@ -46,7 +46,7 @@ jobs:
         with:
           persist-credentials: false
       - name: "Setup: Initialize CodeQL"
-        uses: github/codeql-action/init@05963f47d870e2cb19a537396c1f668a348c7d8f # v3.24.8
+        uses: github/codeql-action/init@23acc5c183826b7a8a97bce3cecc52db901f8251 # v3.25.10
         with:
           languages: ${{ matrix.language }}
       - name: "Setup: Node"
@@ -69,6 +69,6 @@ jobs:
       - name: "Build: Site"
         run: pnpm run site:build
       - name: "Analysis: CodeQL"
-        uses: github/codeql-action/analyze@05963f47d870e2cb19a537396c1f668a348c7d8f # v3.24.8
+        uses: github/codeql-action/analyze@23acc5c183826b7a8a97bce3cecc52db901f8251 # v3.25.10
         with:
           category: "/language:${{matrix.language}}"
